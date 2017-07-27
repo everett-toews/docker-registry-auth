@@ -1,12 +1,8 @@
 ### Building local image
 
 ```
-git clone https://github.com/cesanta/docker_auth.git
+git clone https://github.com/rcbops/docker-registry-auth.git
 cd docker_auth/auth_server
-# copy ca certificate to /etc/ssl/certs/ca-certificates.crt
-pip install gitpython
-mkdir /var/tmp/go
-export GOPATH=/var/tmp/go
-export PATH=$PATH:$GOPATH/bin
-make
+docker build -t quay.io/rackspace/registry-auth .
+docker push quay.io/rackspace/registry-auth
 ```
